@@ -1,12 +1,12 @@
 import requests
-import os 
+import streamlit as st 
 from PIL import Image
 import io
 from dotenv import load_dotenv
 
 load_dotenv()
 
-HF_API_KEY = os.getenv("HF_API_KEY")
+HF_API_KEY = st.secrets["HF_API_KEY"]
 MODEL_URL = "https://router.huggingface.co/hf-inference/models/black-forest-labs/FLUX.1-schnell"
 
 def generate_image(prompt: str) -> Image.Image:
